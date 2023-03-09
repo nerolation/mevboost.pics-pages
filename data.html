@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mevboost.pics | Open Data</title>
+    <meta charset="UTF-8">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@nero_ETH">
+    <meta name="twitter:title" content="Mevboost.pics - Open Source Data">
+    <meta name="twitter:description" content="Open access to the data behind mevboost.pics.">
+    <meta name="twitter:image" content="https://mevboost.toniwahrstaetter.com/pv.png">
+    <meta property="og:title" content="MEV-Boost" relay="" api="" dashboard="">
+    <meta property="og:site_name" content="mevboost.pics">
+    <meta property="og:url" content="mevboost.pics">
+    <meta property="og:description" content="Open access to the data behind mevboost.pics.">
+    <meta property="og:type" content="website">
+    <link rel="shortcut icon" href="./logo.png">
+    <meta property="og:image" content="https://mevboost.toniwahrstaetter.com/pv.png">
+    <meta name="description" content="Open access to the data behind mevboost.pics.">
+    <meta name="keywords" content="Ethereum, MEV-Boost, PBS, Dashboard">
+     <meta name="author" content="Toni Wahrstätter">
+    <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4c4c4c;
+  color: #fff;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2b2b2b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+th:first-child,
+td:first-child {
+  width: 30%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 40%;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  width: 40%;
+}
+
+th:last-child,
+td:last-child {
+  width: 15%;
+  text-align: center;
+}
+a.downloadButton {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #4c4c4c;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0;
+  }
+
+  a.downloadButton:hover {
+    background-color: #333;
+  }
+
+  footer {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .info-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #ccc;
+  color: #454545;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 90vh;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .info-icon:hover + .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+    </style>
+
+
+  </head>
+  <body>
+    <header>
+      <h1>Mevboost.pics - Open Data</h1>
+      <nav>
+        <ul>
+          <li><a href="https://mevboost.pics">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Data Sets</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dataset Name</th>
+            <th>Description</th>
+            <th>Size</th>
+            <th>License</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>eth_data</td>
+            <td>Slots since Merge with additional MEV-Boost and validator info
+              <div class="tooltip">
+                <span class="info-icon">i</span>
+                <div class="tooltip-text">Table columns:<br>date, slot, block_number, relay, builder_pubkey, proposer_pubkey, mevboost_value, builder, validator.</div>
+              </div></td>
+            <td>~125MB</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" href="https://storage.cloud.google.com/public_eth_data/openethdata/eth_data.parquet.gzip">Download</a></td>
+          </tr>
+          <tr>
+            <td>pubkey_mapping</td>
+            <td>Validator public keys mapped to known entities such as Lido, Kraken ect.</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td>tc_txs</td>
+            <td>Tornado Cash related transactions</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td>staking_txs</td>
+            <td>Deposit transactions to the ETH2 Deposit contract</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td>relays_over_time</td>
+            <td>Number of successfully relayed blocks per day</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td>builders_over_time</td>
+            <td>Number of successfully built blocks per day</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <tr>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></td>
+            <td><a class="downloadButton" style="pointer-events: none;background-color:#969696" href="#">Coming Soon</a></td>
+          </tr>
+          <!--<tr>
+            <td>Dataset 2</td>
+            <td>Description of dataset 2</td>
+            <td>20 MB</td>
+            <td><a href="#">Download</a></td>
+          </tr>
+          <tr>
+            <td>Dataset 3</td>
+            <td>Description of dataset 3</td>
+            <td>30 MB</td>
+            <td><a href="#">Download</a></td>
+          </tr> -->
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p>&copy; 2023 Toni Wahrstätter</p>
+    </footer>
+  </body>
+</html>
